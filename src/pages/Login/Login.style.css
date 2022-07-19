@@ -1,0 +1,130 @@
+.loginscreen.middle-box {
+  width: 300px;
+}
+.middle-box {
+  max-width: 400px;
+  z-index: 100;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.middle-box h1 {
+  font-size: 170px;
+}
+
+.logo-name {
+  color: #e6e6e6;
+  font-size: 180px;
+  font-weight: 800;
+  letter-spacing: -10px;
+  margin-bottom: 0;
+}
+h3,
+h4,
+h5 {
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 16px;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-control:focus {
+  border-color: #1ab394;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+.btn-primary {
+  color: #fff;
+  background-color: #1ab394;
+  border-color: #1ab394;
+}
+.full-width {
+  width: 100% !important;
+}
+a {
+  color: #337ab7;
+  cursor: pointer;
+  text-decoration: none;
+}
+.m-b {
+  margin-bottom: 15px;
+}
+.text-muted {
+  color: #888888 !important;
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.btn-white {
+  color: inherit;
+  background: white;
+  border: 1px solid #e7eaec;
+}
+.btn-group-sm > .btn,
+.btn-sm {
+  font-size: 0.8rem;
+}
+.btn {
+  border-radius: 3px;
+  font-size: inherit;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.m-t {
+  margin-top: 15px;
+}
+small {
+  font-size: 80%;
+}
+.gray-bg,
+.bg-muted {
+  background-color: #f3f3f4;
+  height: 100vh;
+  color: #676a6c;
+  font-size: 13px;
+}
+.form-control,
+.single-line {
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #e5e6e7;
+  border-radius: 1px;
+  color: inherit;
+  display: block;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+}
+
+.form-control {
+  font-size: 0.9rem;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus {
+  background-color: #18a689;
+  border-color: #18a689;
+  color: #ffffff;
+}
+
+.btn-white {
+  background: white;
+}
+.btn-white:hover {
+  color: inherit !important;
+  border: 1px solid #d2d2d2 !important;
+}
