@@ -1,0 +1,7 @@
+.icon {
+  width: 20px;
+}
+.nav-link {
+  display: flex;
+  align-items: center !important;
+}

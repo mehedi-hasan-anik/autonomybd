@@ -1,28 +1,24 @@
-import React, { useContext, useEffect } from "react";
-import { userContext } from "../../App";
+import React from "react";
+import ProductTypeTable from "../../components/ProductTypeTable";
+import SideBar from "../../components/SideBar";
 
 const ProductType = () => {
-  const [token] = useContext(userContext);
-
-  const getData = async () => {
-    const response = await fetch(
-      `http://51.195.148.112/api/admin/product-type/`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-
-    const result = await response.json();
-    console.log("data", result);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-  return <div>ProductType</div>;
+  return (
+    <div>
+      <div>
+        <div className="container-fluid">
+          <div className="row flex-nowrap">
+            <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+              <SideBar />
+            </div>
+            <div className="col py-3">
+              <ProductTypeTable />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ProductType;
