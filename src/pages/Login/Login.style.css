@@ -14,7 +14,7 @@
 .logo-name {
   color: #e6e6e6;
   font-size: 180px;
-  font-weight: 800;
+  /* font-weight: 800; */
   letter-spacing: -10px;
   margin-bottom: 0;
 }
@@ -37,14 +37,28 @@ p {
 }
 .form-control:focus {
   border-color: #1ab394;
+  outline: 0;
+  box-shadow: none !important;
 }
-.form-control:focus {
+.form-control,
+.single-line {
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #e5e6e7;
+  border-radius: 1px;
+  color: inherit;
+  display: block;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+}
+/* .form-control:focus {
   color: #495057;
   background-color: #fff;
   border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
-}
+} */
 .btn-primary {
   color: #fff;
   background-color: #1ab394;
@@ -96,18 +110,6 @@ small {
   height: 100vh;
   color: #676a6c;
   font-size: 13px;
-}
-.form-control,
-.single-line {
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #e5e6e7;
-  border-radius: 1px;
-  color: inherit;
-  display: block;
-  padding: 6px 12px;
-  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-  width: 100%;
 }
 
 .form-control {
