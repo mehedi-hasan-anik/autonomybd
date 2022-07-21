@@ -1,28 +1,22 @@
-import React, { useContext, useEffect, useState } from "react";
-import { userContext } from "../../App";
+import React, { useEffect, useState } from "react";
 
 function ProductTypeTable() {
-  const [token] = useContext(userContext);
+  const [token, setToken] = useState(null);
   const [tableData, setTableData] = useState(null);
 
-  const getData = async () => {
-    const response = await fetch(
-      `http://51.195.148.112/api/admin/product-type/`,
-      {
+  useEffect(() => {
+    setToken(localStorage.getItem("token"));
+    if (token !== null) {
+      fetch(`http://51.195.148.112/api/admin/product-type/`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
-    );
-
-    const result = await response.json();
-    setTableData(result?.data);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+      })
+        .then((res) => res.json())
+        .then((res) => setTableData(res?.data));
+    }
+  }, [token]);
 
   return (
     <div>
@@ -37,8 +31,8 @@ function ProductTypeTable() {
             </tr>
           </thead>
           <tbody>
-            {tableData?.map((item) => (
-              <tr>
+            {tableData?.map((item, index) => (
+              <tr key={index}>
                 <td>{item?.created_at}</td>
                 <td>{item?.id}</td>
                 <td>{item?.name}</td>

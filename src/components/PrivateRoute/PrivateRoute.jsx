@@ -1,12 +1,9 @@
-import { Navigate,  useLocation } from 'react-router-dom';
-import  { useContext } from "react";
-import { userContext } from "../../App";
+import { Navigate, useLocation } from "react-router-dom";
 
-const PrivateRoute = ({children}) => {
+const PrivateRoute = ({ children }) => {
   const location = useLocation();
-  const [token] = useContext(userContext);
 
-  if (!token) {
+  if (!localStorage.getItem("token")) {
     return <Navigate to="/" state={{ from: location }} replace />;
   }
   return children;

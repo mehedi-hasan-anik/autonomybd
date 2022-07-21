@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { userContext } from "../../App";
 import "./SideBar.styes.css";
 
 const SideBar = () => {
-  const [, setToken] = useContext(userContext);
   const history = useNavigate();
 
   const handleLogout = () => {
-    setToken(null);
+    localStorage.removeItem("token");
     history("/");
   };
 
