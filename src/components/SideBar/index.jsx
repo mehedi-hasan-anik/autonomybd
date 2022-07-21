@@ -1,8 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { userContext } from "../../App";
 import "./SideBar.styes.css";
 
 const SideBar = () => {
+  const [, setToken] = useContext(userContext);
+  const history = useNavigate();
+
+  const handleLogout = () => {
+    setToken(null);
+    history("/");
+  };
+
   return (
     <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
       <a
@@ -39,8 +48,9 @@ const SideBar = () => {
         </li>
         <li className="nav-item">
           <Link
-            to="/"
+            to="#"
             className="nav-link align-middle px-0 d-flex align-items-center"
+            onClick={handleLogout}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +66,7 @@ const SideBar = () => {
                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
               />
             </svg>
-            <span className="ms-1 d-none d-sm-inline">Login</span>
+            <span className="ms-1 d-none d-sm-inline">Logout</span>
           </Link>
         </li>
       </ul>
